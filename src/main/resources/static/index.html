@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>AutoCompletePortal</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+        <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    </head>
+    <body>
+    <div class="container-fluid" style="width:500px;margin:0 auto">
+            <h2 class="form-signin">Zhe Li AutoComplete POC</h2>
+            <form class="navbar-form" role="search">
+                <div class="form-group" style="position:relative">
+                    <input id="search" type="text" class="form-control" placeholder="Search" onkeyup="searchWord(this)" onblur="moveOut(this)">
+                    <div id="showDiv" style="display:none; position:absolute;z-index:1000;background:#fff; width:196.5px;border:1px solid #ccc;">
+
+                    </div>
+                </div>
+            </form>
+            <!-- asycn search -->
+            <script type="text/javascript">
+
+                function moveOut(obj){
+                    $("#showDiv").css("display","none");
+                }
+
+                function overFn(obj){
+                    $(obj).css("background","#DBEAF9");
+                }
+                function outFn(obj){
+                    $(obj).css("background","#fff");
+                }
+
+                function searchWord(obj){
+                    //1. get the content from form bar
+                    var pre = $(obj).val();
+                    //2. get the result from backend based on prefix
+                    var content = "";
+
+                    $.ajax({
+                        type:"POST",
+                        url:"http://localhost:8080/getTopTen",
+                        contentType: 'application/json',
+                        data:JSON.stringify({
+                            "Prefix": pre
+                        }),
+                        datatype:"json",
+                        success:function(data){
+                            //show the result
+                            //return data format: ["a", "abc", "sdasa"]
+                            $("#showDiv").html(content);
+                            if(data.length>0){
+                                for(var i=0;i<data.length;i++){
+                                    content+="<div style='padding:5px;cursor:pointer' onmouseover='overFn(this)' onmouseout='outFn(this)'>"+data[i]+"</div>";
+                                }
+                                $("#showDiv").html(content);
+                                $("#showDiv").css("display","block");
+                            }
+                        }
+                    });
+                }
+            </script>
+    </div>
+    </body>
+</html>
