@@ -84,12 +84,12 @@ For building and running the application you need:
 ## Running the application only for demo
 DOWNLOAD JAR:
 ```shell
-https://github.com/ReycoLi/autocompletedemo/blob/master/autocompletepoc-0.0.1-SNAPSHOT.jar
+https://github.com/ReycoLi/autocompletedemo/blob/master/autocompletepoc-demo.jar
 ```
 
 RUN JAR:
 ```shell
-$ java -jar autocompletepoc-0.0.1-SNAPSHOT.jar
+$ java -jar autocompletepoc-demo.jar
 ```
 
 RUN UI:
