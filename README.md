@@ -3,8 +3,8 @@
 
 ## Introduction
  This is a Java web-app demo for autocompleting. It takes a list of (name, score) pairs as input. (Basically, the input should be a binary file of List<Pair>). Then it could recommend serveral names with highest score based on the input List.
-
-
+  
+  
 ## Design
 ### Core Objects:
 | Core Object | Description |
@@ -45,6 +45,7 @@ So when restart this application, it will initialize the dictionary trie by dese
 * Cache    
     After finish a search, it will save the result to the cache (HashMap) in Dictionary Trie. When a new search come, it will check the cache first.
   
+  
 ## Customize
 You can customize the following parameter in application.properties file (src/main/resources/application.properties) for initialization.
 
@@ -69,7 +70,8 @@ The max length of random name you want to generate.
 
 6. max_score  
 The max score of random pairs.
-
+  
+  
 ## Environment Requirements
 
 For building and running the application you need:
@@ -77,7 +79,8 @@ For building and running the application you need:
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 - [Maven 3](https://maven.apache.org)  
 **You don't have to install maven if you only want to run the application for demo.**
-
+  
+  
 ## Running the application only for demo
 DOWNLOAD JAR:
 ```shell
@@ -94,7 +97,8 @@ RUN UI:
 Open the following page: http://localhost:8080 and type in the prefix.
 ```  
 **Note: You can see the default configuration in https://github.com/ReycoLi/autocompletedemo/blob/master/src/main/resources/application.properties**
-
+  
+  
 ## Running the application with customized feature
 
 INSTALL:
