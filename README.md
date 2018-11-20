@@ -75,9 +75,27 @@ The max score of random pairs.
 For building and running the application you need:
 
 - [JDK 1.8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-- [Maven 3](https://maven.apache.org)
+- [Maven 3](https://maven.apache.org)  
+**You don't have to install maven if you only want to run the application for demo.**
 
-## Running the application locally
+## Running the application only for demo
+DOWNLOAD JAR:
+```shell
+https://github.com/ReycoLi/autocompletedemo/blob/master/autocompletepoc-0.0.1-SNAPSHOT.jar
+```
+
+RUN JAR:
+```shell
+$ java -jar autocompletepoc-0.0.1-SNAPSHOT.jar
+```
+
+RUN UI:
+```bash
+Open the following page: http://localhost:8080 and type in the prefix.
+```  
+**Note: You can see the default configuration in https://github.com/ReycoLi/autocompletedemo/blob/master/src/main/resources/application.properties**
+
+## Running the application with customized feature
 
 INSTALL:
 
