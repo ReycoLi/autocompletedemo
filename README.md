@@ -1,5 +1,5 @@
 # Autocomplete-App
-<img src="https://github.com/ReycoLi/autocompletepoc_1/blob/master/app_preview0.png" height="300" width="300">
+<img src="https://github.com/ReycoLi/autocompletedemo/blob/master/app_preview0.png" height="300" width="300">
 
 ## Introduction
  This is a Java web-app demo. It takes a list of (name, score) pairs as input. (Basically, the input should be a binary file of List<Pair>). Then it could recommend serveral names with highest score based on the input List.
