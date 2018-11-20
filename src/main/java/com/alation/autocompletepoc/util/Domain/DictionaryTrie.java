@@ -19,9 +19,11 @@ public class DictionaryTrie {
 
     private String TRIE_FILE_NAME = PropertyUtil.getProperty("trie_file_path_name");
 
-    private String pairAmount = PropertyUtil.getProperty("pairAmount");
+    private String pairAmount = PropertyUtil.getProperty("pair_amount");
 
-    private String maxStringLength = PropertyUtil.getProperty("maxStringLength");
+    private String maxStringLength = PropertyUtil.getProperty("maxString_length");
+
+    private String searchAmount = PropertyUtil.getProperty("search_amount");
 
     //Exposed API
     public List<String> search(String prefix){
@@ -43,7 +45,7 @@ public class DictionaryTrie {
             }
         }
         //System.out.println("to find topk");
-        List<String> topTenList = findTopK(curr, 10);
+        List<String> topTenList = findTopK(curr, Integer.valueOf(searchAmount));
         cache.put(prefix, topTenList);
         return topTenList;
     }
@@ -149,6 +151,11 @@ public class DictionaryTrie {
             curr.ResultPairs.add(pair);
         }
     }
+
+//    public void insertExternalPair(Pair externalPair){
+//        insertPair(externalPair);
+//        update trie....
+//    }
 
     private void reverseStringArray(String[] arr) {
         for(int start=0,end=arr.length-1;start<end;start++,end--) {
