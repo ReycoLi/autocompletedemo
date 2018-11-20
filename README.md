@@ -2,7 +2,7 @@
 <img src="https://github.com/ReycoLi/autocompletedemo/blob/master/app_preview0.png" height="300" width="300">
 
 ## Introduction
- This is a Java web-app demo. It takes a list of (name, score) pairs as input. (Basically, the input should be a binary file of List<Pair>). Then it could recommend serveral names with highest score based on the input List.
+ This is a Java web-app demo for autocompleting. It takes a list of (name, score) pairs as input. (Basically, the input should be a binary file of List<Pair>). Then it could recommend serveral names with highest score based on the input List.
 
 
 ## Design
@@ -18,7 +18,7 @@
 
 ### Initialize dictionary trie
 
-* you have own dictionary file   
+* Have own dictionary file   
 If you have your own dictionary(a binary file of a list of pairs), place it in project folder and edit the input_file_path_name attribute in application.properties. The app will deserialize this input file to a list of pair as input automaticlly.  
   
 * Only for demo or test  
