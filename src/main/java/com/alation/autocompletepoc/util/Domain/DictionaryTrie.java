@@ -31,7 +31,6 @@ public class DictionaryTrie {
             return new ArrayList<>();
         }
         if(cache.containsKey(prefix)){
-            //System.out.println("using cache");
             return cache.get(prefix);
         }
 
@@ -44,7 +43,6 @@ public class DictionaryTrie {
                 curr = curr.children.get(c);
             }
         }
-        //System.out.println("to find topk");
         List<String> topTenList = findTopK(curr, Integer.valueOf(searchAmount));
         cache.put(prefix, topTenList);
         return topTenList;
@@ -83,7 +81,6 @@ public class DictionaryTrie {
         }
 
         List<String> res = new ArrayList<>();
-        //System.out.println(resultpq.size());
         while(resultpq.size() != 0){
             res.add(resultpq.poll().getName());
         }
@@ -102,8 +99,6 @@ public class DictionaryTrie {
             List<Pair> pairs = SerializeUtil.getObjectFromFile(inputFile, List.class);
             root = new TrieNode();
             for(Pair pair : pairs){
-                //System.out.println(pair.getName());
-                //System.out.println(pair.getScore());
                 insertPair(pair);
             }
             SerializeUtil.writeObjectToFile(TRIE_FILE_NAME, root);
@@ -125,10 +120,8 @@ public class DictionaryTrie {
             TrieNode curr = root;
             if(partialName.equals("")){
                 partialName += name;
-                //System.out.println(partialName);
             } else {
                 partialName = name + "_" + partialName;
-                //System.out.println(partialName);
             }
 
             for(char c : partialName.toCharArray()){
@@ -151,11 +144,6 @@ public class DictionaryTrie {
             curr.ResultPairs.add(pair);
         }
     }
-
-//    public void insertExternalPair(Pair externalPair){
-//        insertPair(externalPair);
-//        update trie....
-//    }
 
     private void reverseStringArray(String[] arr) {
         for(int start=0,end=arr.length-1;start<end;start++,end--) {
