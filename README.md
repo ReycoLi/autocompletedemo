@@ -94,7 +94,7 @@ $ java -jar autocompletepoc-demo.jar
 
 RUN UI:
 ```bash
-Open the following page: http://localhost:8080 and type in the prefix.
+Open the following page: http://localhost:8080
 ```  
 **Note: You can see the default configuration in https://github.com/ReycoLi/autocompletedemo/blob/master/src/main/resources/application.properties**
   
@@ -104,7 +104,7 @@ Open the following page: http://localhost:8080 and type in the prefix.
 INSTALL:
 
 ```shell
-$ git clone https://github.com/ReycoLi/autocompletepoc_1.git
+$ git clone https://github.com/ReycoLi/autocompletedemo.git
 ```
 
 RUN SERVER:
