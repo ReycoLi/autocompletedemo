@@ -109,7 +109,7 @@ $ git clone https://github.com/ReycoLi/autocompletedemo.git
 
 RUN SERVER:
 ```shell
-$ cd autocompletepoc_1
+$ cd 
 $ mvn clean install spring-boot:run
 ```
 
